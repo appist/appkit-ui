@@ -4,7 +4,8 @@
   "description": "A minimalist UI framework for developing responsive, mobile first on the web using Svelte and Tailwind CSS.",
   "main": "src/index.ts",
   "files": [
-    "src"
+    "src",
+    "node_modules/@iconify-icons"
   ],
   "scripts": {
     "sb": "start-storybook -p 6006",

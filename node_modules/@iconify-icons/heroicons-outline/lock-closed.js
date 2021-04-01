@@ -1,0 +1,6 @@
+var data = {
+	"body": "<g fill=\"none\"><path d=\"M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2zm10-10V7a4 4 0 0 0-8 0v4h8z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g>",
+	"width": 24,
+	"height": 24
+};
+export default data;
