@@ -8,7 +8,6 @@
   ],
   "scripts": {
     "copy:icons": "cp -R node_modules/@iconify-icons src",
-    "postinstall": "npm run copy:icons",
     "prestart": "npm run copy:icons",
     "sb:build": "build-storybook",
     "sb:chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes",
