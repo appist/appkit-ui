@@ -9,6 +9,7 @@
   "scripts": {
     "sb": "start-storybook -p 6006",
     "sb:build": "build-storybook",
+    "sb:preview": "start-storybook --docs --no-manager-cache",
     "sb:chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes",
     "semantic-release": "semantic-release",
     "test": "jest",
