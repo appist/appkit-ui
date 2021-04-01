@@ -234,7 +234,7 @@
   let iconifyIcon;
 
   onMount(async () => {
-    const result = await import(`../node_modules/@iconify-icons/heroicons-${variant}/${icon}`);
+    const result = await import(`./@iconify-icons/heroicons-${variant}/${icon}`);
     iconifyIcon = result.default;
   });
 

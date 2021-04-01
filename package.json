@@ -4,16 +4,18 @@
   "description": "A minimalist UI framework for developing responsive, mobile first on the web using Svelte and Tailwind CSS.",
   "main": "src/index.ts",
   "files": [
-    "src",
-    "node_modules/@iconify-icons"
+    "src"
   ],
   "scripts": {
-    "sb": "start-storybook -p 6006",
+    "copy:icons": "cp -R node_modules/@iconify-icons src",
+    "postinstall": "npm run copy:icons",
+    "prestart": "npm run copy:icons",
     "sb:build": "build-storybook",
     "sb:chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes",
-    "validate": "svelte-check",
+    "semantic-release": "semantic-release",
+    "start": "start-storybook -p 6006",
     "test": "jest",
-    "semantic-release": "semantic-release"
+    "validate": "svelte-check"
   },
   "publishConfig": {
     "access": "public"
