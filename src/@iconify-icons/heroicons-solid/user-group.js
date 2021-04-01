@@ -1,6 +1,0 @@
-var data = {
-	"body": "<g fill=\"none\"><path d=\"M13 6a3 3 0 1 1-6 0a3 3 0 0 1 6 0z\" fill=\"currentColor\"/><path d=\"M18 8a2 2 0 1 1-4 0a2 2 0 0 1 4 0z\" fill=\"currentColor\"/><path d=\"M14 15a4 4 0 0 0-8 0v3h8v-3z\" fill=\"currentColor\"/><path d=\"M6 8a2 2 0 1 1-4 0a2 2 0 0 1 4 0z\" fill=\"currentColor\"/><path d=\"M16 18v-3a5.972 5.972 0 0 0-.75-2.906A3.005 3.005 0 0 1 19 15v3h-3z\" fill=\"currentColor\"/><path d=\"M4.75 12.094A5.973 5.973 0 0 0 4 15v3H1v-3a3 3 0 0 1 3.75-2.906z\" fill=\"currentColor\"/></g>",
-	"width": 20,
-	"height": 20
-};
-export default data;

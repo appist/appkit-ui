@@ -1,113 +1,126 @@
 <script>
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import H1 from "./components/H1.svelte";
-  import H2 from "./components/H2.svelte";
-  import IconStories from "./Icon.stories.svelte";
-  import ButtonC from "../src/Button.svelte";
+  import { Meta, Story } from "@storybook/addon-svelte-csf";
+  import home from "@iconify-icons/heroicons-solid/home";
+  import Button from "../src/Button.svelte";
 </script>
 
-<Meta
-  title="Components/Button"
-  component={ButtonC}
-  argTypes={{
-    block: {
-      control: "boolean"
-    },
-    disabled: {
-      control: "boolean"
-    },
-    icon: IconStories.argTypes.icon,
-    iconPos: {
-      control: "inline-radio",
-      options: ["cover", "leading", "trailing"],
-    },
-    iconVariant: {
-      control: "inline-radio",
-      options: ["outline", "solid"],
-    },
-    loading: {
-      control: "boolean"
-    },
-    shape: {
-      control: "inline-radio",
-      options: ["default", "circle", "pill", "round"],
-    },
-    size: {
-      control: "inline-radio",
-      options: ["lg", "md", "sm"],
-    },
-    type: {
-      control: "inline-radio",
-      options: ["primary", "secondary", "minimal"],
-    },
-    onClick: { action: 'onClick' },
-  }}
-/>
+<Meta title="Components/Buttons" component={Button} />
 
-<Template let:args let:onClick>
-  <H1>Playground</H1>
-  <ButtonC {...args} on:click={onClick}>button</ButtonC>
+<Story name="kind">
+  <Button kind="primary">Primary</Button>
+  <Button kind="secondary">Secondary</Button>
+  <Button kind="danger">Danger</Button>
+  <Button kind="info">Info</Button>
+  <Button kind="success">Success</Button>
+  <Button kind="warning">Warning</Button>
+</Story>
 
-  <H1>Properties</H1>
+<Story name="icon">
+  <div>
+    <Button size="sm" icon={home}>Home</Button>
+    <Button size="md" icon={home}>Home</Button>
+    <Button size="lg" icon={home}>Home</Button>
+  </div>
 
-  <H2>type</H2>
-  <ButtonC type="primary">primary</ButtonC>
-  <ButtonC type="secondary">secondary</ButtonC>
-  <ButtonC type="minimal">minimal</ButtonC>
+  <div class="mt-6">
+    <Button size="sm" icon={home} iconPos="leading">Home</Button>
+    <Button size="md" icon={home} iconPos="leading">Home</Button>
+    <Button size="lg" icon={home} iconPos="leading">Home</Button>
+  </div>
 
-  <H2>size</H2>
-  <ButtonC size="sm">small</ButtonC>
-  <ButtonC size="md">medium</ButtonC>
-  <ButtonC size="lg">large</ButtonC>
+  <div class="mt-6">
+    <Button size="sm" icon={home} iconPos="trailing">Home</Button>
+    <Button size="md" icon={home} iconPos="trailing">Home</Button>
+    <Button size="lg" icon={home} iconPos="trailing">Home</Button>
+  </div>
+</Story>
 
-  <H2>disabled</H2>
-  <ButtonC type="primary" size="sm" disabled={true}>small</ButtonC>
-  <ButtonC type="secondary" size="md" disabled={true}>medium</ButtonC>
-  <ButtonC type="minimal" size="lg" disabled={true}>large</ButtonC>
+<Story name="shape">
+  <div>
+    <Button size="sm" shape="default">Default</Button>
+    <Button size="sm" shape="pill">Pill</Button>
+    <Button size="sm" shape="round" icon={home}>Round</Button>
+  </div>
 
-  <H2>loading</H2>
-  <ButtonC type="primary" size="sm" loading={true}>small</ButtonC>
-  <ButtonC type="secondary" size="md" loading={true}>medium</ButtonC>
-  <ButtonC type="minimal" size="lg" loading={true}>large</ButtonC>
+  <div class="mt-6">
+    <Button size="md" shape="default">Default</Button>
+    <Button size="md" shape="pill">Pill</Button>
+    <Button size="md" shape="round" icon={home}>Round</Button>
+  </div>
 
-  <H2>leading icon</H2>
-  <ButtonC type="primary" size="sm" icon="academic-cap" iconPos="leading">small</ButtonC>
-  <ButtonC type="secondary" size="md" icon="adjustments" iconPos="leading">medium</ButtonC>
-  <ButtonC type="minimal" size="lg" icon="annotation" iconPos="leading">large</ButtonC>
+  <div class="mt-6">
+    <Button size="lg" shape="default">Default</Button>
+    <Button size="lg" shape="pill">Pill</Button>
+    <Button size="lg" shape="round" icon={home}>Round</Button>
+  </div>
+</Story>
 
-  <H2>trailing icon</H2>
-  <ButtonC type="primary" size="sm" icon="academic-cap" iconPos="trailing">small</ButtonC>
-  <ButtonC type="secondary" size="md" icon="adjustments" iconPos="trailing">medium</ButtonC>
-  <ButtonC type="minimal" size="lg" icon="annotation" iconPos="trailing">large</ButtonC>
+<Story name="size">
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+</Story>
 
-  <H2>shape</H2>
-  <ButtonC shape="default" size="sm">default</ButtonC>
-  <ButtonC shape="circle" size="sm" icon="mail">circle</ButtonC>
-  <ButtonC shape="pill" size="sm">green pill</ButtonC>
-  <ButtonC shape="round" size="sm">round</ButtonC>
-  <br /><br />
-  <ButtonC shape="default">default</ButtonC>
-  <ButtonC shape="circle" icon="mail">circle</ButtonC>
-  <ButtonC shape="pill">green pill</ButtonC>
-  <ButtonC shape="round">round</ButtonC>
-  <br /><br />
-  <ButtonC shape="default" size="lg">default</ButtonC>
-  <ButtonC shape="circle" size="lg" icon="mail"></ButtonC>
-  <ButtonC shape="pill" size="lg">green pill</ButtonC>
-  <ButtonC shape="round" size="lg">round</ButtonC>
-</Template>
+<Story name="block">
+  <Button kind="primary" block>Primary</Button>
+  <Button kind="secondary" block>Secondary</Button>
+  <Button kind="danger" block>Danger</Button>
+  <Button kind="info" block>Info</Button>
+  <Button kind="success" block>Success</Button>
+  <Button kind="warning" block>Warning</Button>
+</Story>
 
-<Story 
-  name="Button" 
-  args={{ 
-    block: false, 
-    disabled: false,
-    icon: "", 
-    iconPos: "cover",
-    iconVariant: "solid",
-    loading: false,
-    shape: "default",
-    size: "md",
-    type: "primary"
-  }} 
-/>
+<Story name="disabled">
+  <Button kind="primary" disabled>Primary</Button>
+  <Button kind="secondary" disabled>Secondary</Button>
+  <Button kind="danger" disabled>Danger</Button>
+  <Button kind="info" disabled>Info</Button>
+  <Button kind="success" disabled>Success</Button>
+  <Button kind="warning" disabled>Warning</Button>
+</Story>
+
+<Story name="loading">
+  <div>
+    <Button kind="primary" size="sm" loading>Primary</Button>
+    <Button kind="secondary" size="sm" loading>Secondary</Button>
+    <Button kind="danger" size="sm" loading>Danger</Button>
+    <Button kind="info" size="sm" loading>Info</Button>
+    <Button kind="success" size="sm" loading>Success</Button>
+    <Button kind="warning" size="sm" loading>Warning</Button>
+  </div>
+
+  <div class="mt-6">
+    <Button kind="primary" size="md" loading>Primary</Button>
+    <Button kind="secondary" size="md" loading>Secondary</Button>
+    <Button kind="danger" size="md" loading>Danger</Button>
+    <Button kind="info" size="md" loading>Info</Button>
+    <Button kind="success" size="md" loading>Success</Button>
+    <Button kind="warning" size="md" loading>Warning</Button>
+  </div>
+
+  <div class="mt-6">
+    <Button kind="primary" size="lg" loading>Primary</Button>
+    <Button kind="secondary" size="lg" loading>Secondary</Button>
+    <Button kind="danger" size="lg" loading>Danger</Button>
+    <Button kind="info" size="lg" loading>Info</Button>
+    <Button kind="success" size="lg" loading>Success</Button>
+    <Button kind="warning" size="lg" loading>Warning</Button>
+  </div>
+</Story>
+
+<Story name="mixed">
+  <div>
+    <Button kind="primary" disabled>Primary</Button>
+    <Button class="align-bottom" kind="primary" loading>Primary</Button>
+    <Button size="md" shape="round" icon={home}>Round</Button>
+    <Button size="md" shape="round" icon={home} loading>Round</Button>
+    <Button class="align-bottom" size="md" icon={home} iconPos="leading">Leading Icon</Button>
+    <Button class="align-bottom" size="md" icon={home} iconPos="leading" loading
+      >Leading Icon</Button
+    >
+    <Button size="md" icon={home} iconPos="trailing">Trailing Icon</Button>
+    <Button class="align-bottom" size="md" icon={home} iconPos="trailing" loading
+      >Trailing Icon</Button
+    >
+  </div>
+</Story>

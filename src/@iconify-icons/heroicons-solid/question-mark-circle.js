@@ -1,6 +1,0 @@
-var data = {
-	"body": "<g fill=\"none\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M18 10a8 8 0 1 1-16 0a8 8 0 0 1 16 0zm-8-3a1 1 0 0 0-.867.5a1 1 0 1 1-1.731-1A3 3 0 0 1 13 8a3.001 3.001 0 0 1-2 2.83V11a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1a1 1 0 1 0 0-2zm0 8a1 1 0 1 0 0-2a1 1 0 0 0 0 2z\" fill=\"currentColor\"/></g>",
-	"width": 20,
-	"height": 20
-};
-export default data;

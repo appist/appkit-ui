@@ -17,7 +17,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: colors.green,
+        primary: colors.green,
+        secondary: colors.coolGray,
+        success: colors.emerald,
+        info: colors.blue,
+        warning: colors.amber,
+        danger: colors.red,
+        dark: colors.coolGray,
+        light: colors.coolGray,
       },
     },
   },
