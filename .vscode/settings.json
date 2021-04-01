@@ -1,0 +1,9 @@
+{
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  "prettier.prettierPath": "./node_modules/prettier",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  }
+}
