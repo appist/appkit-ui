@@ -7,7 +7,7 @@
     "src"
   ],
   "scripts": {
-    "sb": "start-storybook --docs --port 6006 --no-manager-cache",
+    "sb": "start-storybook --docs --no-manager-cache --port 6006",
     "sb:build": "build-storybook --docs",
     "sb:preview": "npm run sb:build && serve storybook-static",
     "sb:chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes",

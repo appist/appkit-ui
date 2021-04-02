@@ -57,17 +57,17 @@
       "bg-warning-500 hover:bg-warning-600": color === "warning" && !outline,
 
       // To support outline button.
-      "bg-transparent border hover:text-white": outline,
+      "bg-transparent border hover:!text-white": outline,
       "p-[0.3125rem]": size === "sm" && outline,
       "p-[0.4375rem]": size === "md" && outline,
       "p-[0.5625rem]": size === "lg" && outline,
-      "border-primary-500 text-primary-500 hover:bg-primary-600": color === "primary" && outline,
-      "border-secondary-500 text-secondary-500 hover:bg-secondary-600":
+      "border-primary-500 !text-primary-500 hover:bg-primary-600": color === "primary" && outline,
+      "border-secondary-500 !text-secondary-500 hover:bg-secondary-600":
         color === "secondary" && outline,
-      "border-danger-500 text-danger-500 hover:bg-danger-600": color === "danger" && outline,
-      "border-info-500 text-info-500 hover:bg-info-600": color === "info" && outline,
-      "border-success-500 text-success-500 hover:bg-success-600": color === "success" && outline,
-      "border-warning-500 text-warning-500 hover:bg-warning-600": color === "warning" && outline,
+      "border-danger-500 !text-danger-500 hover:bg-danger-600": color === "danger" && outline,
+      "border-info-500 !text-info-500 hover:bg-info-600": color === "info" && outline,
+      "border-success-500 !text-success-500 hover:bg-success-600": color === "success" && outline,
+      "border-warning-500 !text-warning-500 hover:bg-warning-600": color === "warning" && outline,
     },
     "inline-flex items-center text-white text-center focus:outline-none",
     klass
