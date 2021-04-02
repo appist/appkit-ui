@@ -13,4 +13,9 @@ export const parameters = {
       order: ["Introduction", "Getting Started", "Components"],
     },
   },
+  previewTabs: {
+    canvas: {
+      hidden: true,
+    },
+  },
 };

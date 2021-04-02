@@ -3,7 +3,7 @@ const { tailwindExtractor } = require("tailwindcss/lib/lib/purgeUnusedStyles");
 
 module.exports = {
   purge: {
-    content: ["./stories/**/*.html", "./stories/**/*.svelte"],
+    content: ["./src/**/*.svelte", "./stories/**/*.html", "./stories/**/*.svelte"],
     options: {
       defaultExtractor: content => [
         ...tailwindExtractor(content),
