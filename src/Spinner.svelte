@@ -1,12 +1,43 @@
 <script lang="ts">
+  import clsx from "clsx";
+
+  export let color:
+    | "danger"
+    | "dark"
+    | "info"
+    | "light"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning"
+    | "white" = "primary";
+
+  export let size: "lg" | "md" | "sm" = "md";
+
+  const { class: klass, ...props } = $$props;
 </script>
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  class={$$props.class}
-  style={$$props.style}
+  class={clsx(
+    {
+      "h-5 w-5": size === "sm",
+      "h-6 w-6": size === "md",
+      "h-7 w-7": size === "lg",
+      "text-primary-500": color === "primary",
+      "text-secondary-500": color === "secondary",
+      "text-danger-500": color === "danger",
+      "text-info-500": color === "info",
+      "text-success-500": color === "success",
+      "text-warning-500": color === "warning",
+      "text-white": color === "white",
+    },
+    "inline",
+    klass
+  )}
   fill="none"
   viewBox="0 0 24 24"
+  {...props}
 >
   <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
 

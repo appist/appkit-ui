@@ -6,18 +6,20 @@
 <Meta title="Components/Spinners" component={Spinner} />
 
 <Story name="Spinners">
-  <Spinner class="w-6 h-6 inline" />
+  <Spinner />
 </Story>
 
-<Story name="with size">
-  <Spinner class="w-4 h-4 inline" />
-  <Spinner class="w-8 h-8 inline" />
-  <Spinner class="w-12 h-12 inline" />
+<Story name="size">
+  <Spinner size="sm" color="primary" />
+  <Spinner size="md" color="secondary" />
+  <Spinner size="lg" color="danger" />
 </Story>
 
-<Story name="with color">
-  <Spinner class="w-6 h-6 text-blue-500 inline" />
-  <Spinner class="w-6 h-6 text-green-500 inline" />
-  <Spinner class="w-6 h-6 text-red-500 inline" />
-  <Spinner class="w-6 h-6 text-yellow-500 inline" />
+<Story name="color">
+  <Spinner color="primary" />
+  <Spinner color="secondary" />
+  <Spinner color="danger" />
+  <Spinner color="info" />
+  <Spinner color="success" />
+  <Spinner color="warning" />
 </Story>
