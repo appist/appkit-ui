@@ -6,6 +6,5 @@ A minimalist UI framework for developing responsive, mobile first on the web usi
 
 Most of the design guidelines/inspirations are from:
 
-- [Uber Base Design](https://baseweb.design/)
-- [Tailblocks](https://tailblocks.cc/)
+- [Bootstrap 5](https://getbootstrap.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
