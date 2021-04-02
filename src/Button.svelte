@@ -33,16 +33,29 @@
       "w-full justify-center": block,
       "opacity-70 pointer-events-none": disabled,
       "flex-col pointer-events-none": loading,
+
+      // To support different button sizes.
       "p-1.5 text-sm": size === "sm",
       "p-2 text-base": size === "md",
       "p-2.5 text-lg": size === "lg",
+
+      // To support different button shapes.
       "px-6 rounded-full": shape === "pill",
       "flex items-center justify-center rounded-full align-bottom": shape === "round",
+
+      // Ensure size consistency when the shape is round.
       "h-8 w-8": size === "sm" && shape === "round",
       "h-10 w-10": size === "md" && shape === "round",
       "h-12 w-12": size === "lg" && shape === "round",
+
+      // Note: PurgeCSS won't work well with dynamic classes. Hence, the repeatitive class switching below.
+      "bg-primary-500 hover:bg-primary-600": kind === "primary",
+      "bg-secondary-500 hover:bg-secondary-600": kind === "secondary",
+      "bg-danger-500 hover:bg-danger-600": kind === "danger",
+      "bg-info-500 hover:bg-info-600": kind === "info",
+      "bg-success-500 hover:bg-success-600": kind === "success",
+      "bg-warning-500 hover:bg-warning-600": kind === "warning",
     },
-    `bg-${kind}-500 hover:bg-${kind}-600`,
     "inline-flex items-center text-white text-center focus:outline-none",
     klass
   )}

@@ -6,6 +6,10 @@
 
 <Meta title="Components/Buttons" component={Button} />
 
+<Story name="Buttons">
+  <Button>Button</Button>
+</Story>
+
 <Story name="kind">
   <Button kind="primary">Primary</Button>
   <Button kind="secondary">Secondary</Button>
