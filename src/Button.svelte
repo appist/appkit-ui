@@ -3,8 +3,6 @@
   import type { IconifyIcon } from "@iconify/svelte";
   import Icon from "@iconify/svelte";
   import Spinner from "./Spinner.svelte";
-  import Button from "../stories/Button.stories.svelte";
-  import { compute_rest_props } from "svelte/internal";
 
   export let block: boolean = false;
   export let disabled: boolean = false;
