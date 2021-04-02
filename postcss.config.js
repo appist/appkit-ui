@@ -1,6 +1,6 @@
 let plugins = [
   require("postcss-import"),
-  require("tailwindcss"),
+  require("@tailwindcss/jit"),
   require("postcss-preset-env")({
     stage: 1,
     features: {
