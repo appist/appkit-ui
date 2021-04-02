@@ -21,7 +21,7 @@
     | "success"
     | "warning" = "primary";
 
-  const { class: klass, props } = $$props;
+  const { class: klass, ...props } = $$props;
 </script>
 
 <button
