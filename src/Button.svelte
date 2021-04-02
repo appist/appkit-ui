@@ -9,9 +9,10 @@
   export let icon: IconifyIcon = null;
   export let iconPos: "cover" | "leading" | "trailing" = "cover";
   export let loading: boolean = false;
+  export let outline: boolean = false;
   export let shape: "default" | "pill" | "round" = "default";
   export let size: "lg" | "md" | "sm" = "md";
-  export let kind:
+  export let color:
     | "danger"
     | "dark"
     | "info"
@@ -29,7 +30,7 @@
   class={clsx(
     {
       "w-full justify-center": block,
-      "opacity-70 pointer-events-none": disabled,
+      "opacity-60 pointer-events-none": disabled,
       "flex-col pointer-events-none": loading,
 
       // To support different button sizes.
@@ -39,6 +40,7 @@
 
       // To support different button shapes.
       "px-6 rounded-full": shape === "pill",
+
       "flex items-center justify-center rounded-full align-bottom": shape === "round",
 
       // Ensure size consistency when the shape is round.
@@ -47,26 +49,35 @@
       "h-12 w-12": size === "lg" && shape === "round",
 
       // Note: PurgeCSS won't work well with dynamic classes. Hence, the repeatitive class switching below.
-      "bg-primary-500 hover:bg-primary-600": kind === "primary",
-      "bg-secondary-500 hover:bg-secondary-600": kind === "secondary",
-      "bg-danger-500 hover:bg-danger-600": kind === "danger",
-      "bg-info-500 hover:bg-info-600": kind === "info",
-      "bg-success-500 hover:bg-success-600": kind === "success",
-      "bg-warning-500 hover:bg-warning-600": kind === "warning",
+      "bg-primary-500 hover:bg-primary-600": color === "primary" && !outline,
+      "bg-secondary-500 hover:bg-secondary-600": color === "secondary" && !outline,
+      "bg-danger-500 hover:bg-danger-600": color === "danger" && !outline,
+      "bg-info-500 hover:bg-info-600": color === "info" && !outline,
+      "bg-success-500 hover:bg-success-600": color === "success" && !outline,
+      "bg-warning-500 hover:bg-warning-600": color === "warning" && !outline,
+
+      // To support outline button.
+      "bg-transparent border hover:text-white": outline,
+      "p-[0.3125rem]": size === "sm" && outline,
+      "p-[0.4375rem]": size === "md" && outline,
+      "p-[0.5625rem]": size === "lg" && outline,
+      "border-primary-500 text-primary-500 hover:bg-primary-600": color === "primary" && outline,
+      "border-secondary-500 text-secondary-500 hover:bg-secondary-600":
+        color === "secondary" && outline,
+      "border-danger-500 text-danger-500 hover:bg-danger-600": color === "danger" && outline,
+      "border-info-500 text-info-500 hover:bg-info-600": color === "info" && outline,
+      "border-success-500 text-success-500 hover:bg-success-600": color === "success" && outline,
+      "border-warning-500 text-warning-500 hover:bg-warning-600": color === "warning" && outline,
     },
     "inline-flex items-center text-white text-center focus:outline-none",
     klass
   )}
-  {...props}
+  style={props.style}
+  on:click
+  on:dblclick
 >
   {#if loading}
-    <Spinner
-      class={clsx({
-        "h-5 w-5": size === "sm",
-        "h-6 w-6": size === "md",
-        "h-7 w-7": size === "lg",
-      })}
-    />
+    <Spinner {size} color={outline ? color : "white"} />
 
     <div class="opacity-0 flex h-0">
       {#if icon !== ""}

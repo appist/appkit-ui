@@ -10,13 +10,13 @@
   <Button>Button</Button>
 </Story>
 
-<Story name="kind">
-  <Button kind="primary">Primary</Button>
-  <Button kind="secondary">Secondary</Button>
-  <Button kind="danger">Danger</Button>
-  <Button kind="info">Info</Button>
-  <Button kind="success">Success</Button>
-  <Button kind="warning">Warning</Button>
+<Story name="color">
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="danger">Danger</Button>
+  <Button color="info">Info</Button>
+  <Button color="success">Success</Button>
+  <Button color="warning">Warning</Button>
 </Story>
 
 <Story name="icon">
@@ -60,63 +60,100 @@
 </Story>
 
 <Story name="size">
-  <Button size="sm">Small</Button>
-  <Button size="md">Medium</Button>
-  <Button size="lg">Large</Button>
+  <div>
+    <Button size="sm">Small</Button>
+    <Button size="md">Medium</Button>
+    <Button size="lg">Large</Button>
+  </div>
+
+  <div class="mt-6">
+    <Button size="sm" outline>Small</Button>
+    <Button size="md" outline>Medium</Button>
+    <Button size="lg" outline>Large</Button>
+  </div>
 </Story>
 
 <Story name="block">
-  <Button kind="primary" block>Primary</Button>
-  <Button kind="secondary" block>Secondary</Button>
-  <Button kind="danger" block>Danger</Button>
-  <Button kind="info" block>Info</Button>
-  <Button kind="success" block>Success</Button>
-  <Button kind="warning" block>Warning</Button>
+  <Button color="primary" block>Primary</Button>
+  <Button color="secondary" block>Secondary</Button>
+  <Button color="danger" block>Danger</Button>
+  <Button color="info" block>Info</Button>
+  <Button color="success" block>Success</Button>
+  <Button color="warning" block>Warning</Button>
 </Story>
 
 <Story name="disabled">
-  <Button kind="primary" disabled>Primary</Button>
-  <Button kind="secondary" disabled>Secondary</Button>
-  <Button kind="danger" disabled>Danger</Button>
-  <Button kind="info" disabled>Info</Button>
-  <Button kind="success" disabled>Success</Button>
-  <Button kind="warning" disabled>Warning</Button>
+  <Button color="primary" disabled>Primary</Button>
+  <Button color="secondary" disabled>Secondary</Button>
+  <Button color="danger" disabled>Danger</Button>
+  <Button color="info" disabled>Info</Button>
+  <Button color="success" disabled>Success</Button>
+  <Button color="warning" disabled>Warning</Button>
 </Story>
 
 <Story name="loading">
   <div>
-    <Button kind="primary" size="sm" loading>Primary</Button>
-    <Button kind="secondary" size="sm" loading>Secondary</Button>
-    <Button kind="danger" size="sm" loading>Danger</Button>
-    <Button kind="info" size="sm" loading>Info</Button>
-    <Button kind="success" size="sm" loading>Success</Button>
-    <Button kind="warning" size="sm" loading>Warning</Button>
+    <Button color="primary" size="sm" loading>Primary</Button>
+    <Button color="secondary" size="sm" loading>Secondary</Button>
+    <Button color="danger" size="sm" loading>Danger</Button>
+    <Button color="info" size="sm" loading>Info</Button>
+    <Button color="success" size="sm" loading>Success</Button>
+    <Button color="warning" size="sm" loading>Warning</Button>
   </div>
 
   <div class="mt-6">
-    <Button kind="primary" size="md" loading>Primary</Button>
-    <Button kind="secondary" size="md" loading>Secondary</Button>
-    <Button kind="danger" size="md" loading>Danger</Button>
-    <Button kind="info" size="md" loading>Info</Button>
-    <Button kind="success" size="md" loading>Success</Button>
-    <Button kind="warning" size="md" loading>Warning</Button>
+    <Button color="primary" size="md" loading>Primary</Button>
+    <Button color="secondary" size="md" loading>Secondary</Button>
+    <Button color="danger" size="md" loading>Danger</Button>
+    <Button color="info" size="md" loading>Info</Button>
+    <Button color="success" size="md" loading>Success</Button>
+    <Button color="warning" size="md" loading>Warning</Button>
   </div>
 
   <div class="mt-6">
-    <Button kind="primary" size="lg" loading>Primary</Button>
-    <Button kind="secondary" size="lg" loading>Secondary</Button>
-    <Button kind="danger" size="lg" loading>Danger</Button>
-    <Button kind="info" size="lg" loading>Info</Button>
-    <Button kind="success" size="lg" loading>Success</Button>
-    <Button kind="warning" size="lg" loading>Warning</Button>
+    <Button color="primary" size="lg" loading>Primary</Button>
+    <Button color="secondary" size="lg" loading>Secondary</Button>
+    <Button color="danger" size="lg" loading>Danger</Button>
+    <Button color="info" size="lg" loading>Info</Button>
+    <Button color="success" size="lg" loading>Success</Button>
+    <Button color="warning" size="lg" loading>Warning</Button>
+  </div>
+</Story>
+
+<Story name="outline">
+  <div>
+    <Button color="primary" outline>Primary</Button>
+    <Button color="secondary" outline>Secondary</Button>
+    <Button color="danger" outline>Danger</Button>
+    <Button color="info" outline>Info</Button>
+    <Button color="success" outline>Success</Button>
+    <Button color="warning" outline>Warning</Button>
+  </div>
+
+  <div class="mt-6">
+    <Button color="primary" outline disabled>Primary</Button>
+    <Button color="secondary" outline disabled>Secondary</Button>
+    <Button color="danger" outline disabled>Danger</Button>
+    <Button color="info" outline disabled>Info</Button>
+    <Button color="success" outline disabled>Success</Button>
+    <Button color="warning" outline disabled>Warning</Button>
+  </div>
+
+  <div class="mt-6">
+    <Button color="primary" outline loading>Primary</Button>
+    <Button color="secondary" outline loading>Secondary</Button>
+    <Button color="danger" outline loading>Danger</Button>
+    <Button color="info" outline loading>Info</Button>
+    <Button color="success" outline loading>Success</Button>
+    <Button color="warning" outline loading>Warning</Button>
   </div>
 </Story>
 
 <Story name="mixed">
   <div>
-    <Button kind="primary" disabled>Primary</Button>
-    <Button class="align-bottom" kind="primary" loading>Primary</Button>
-    <Button size="md" shape="round" icon={home}>Round</Button>
+    <Button color="primary" disabled>Primary</Button>
+    <Button class="align-bottom" color="primary" loading>Primary</Button>
+    <Button size="md" shape="round" icon={home} on:click={() => console.log("keke")}>Round</Button>
     <Button size="md" shape="round" icon={home} loading>Round</Button>
     <Button class="align-bottom" size="md" icon={home} iconPos="leading">Leading Icon</Button>
     <Button class="align-bottom" size="md" icon={home} iconPos="leading" loading
@@ -126,5 +163,6 @@
     <Button class="align-bottom" size="md" icon={home} iconPos="trailing" loading
       >Trailing Icon</Button
     >
+    <Button color="primary" outline>Primary</Button>
   </div>
 </Story>
