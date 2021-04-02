@@ -17,10 +17,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: colors.green,
+        primary: colors.blue,
         secondary: colors.coolGray,
-        success: colors.emerald,
-        info: colors.blue,
+        success: colors.green,
+        info: colors.lightBlue,
         warning: colors.amber,
         danger: colors.red,
         dark: colors.coolGray,
