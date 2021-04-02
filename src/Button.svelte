@@ -79,7 +79,7 @@
   {#if loading}
     <Spinner {size} color={outline ? color : "white"} />
 
-    <div class="opacity-0 flex h-0">
+    <div class="opacity-0 inline h-0">
       {#if icon !== ""}
         {#if iconPos === "cover"}
           <Icon {icon} />
