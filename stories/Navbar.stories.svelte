@@ -6,7 +6,7 @@
 <Meta title="Components/Navbars" component={Navbar} />
 
 <Story name="Navbars">
-  <div style="background-color: #eff2f6; height: 260px;">
+  <div style="background-color: #eff2f6; height: 280px;">
     <Navbar
       brand={{
         href: "https://appist.github.io/appkit-ui/",
@@ -18,8 +18,8 @@
         { name: "Pricing", href: "/pricing" },
       ]}
       authLinks={[
-        { name: "Login", href: "/login", bgColor: "" },
-        { name: "Register", href: "/register", bgColor: "success" },
+        { name: "Login", href: "/login", color: "" },
+        { name: "Register", href: "/register", color: "success" },
       ]}
     />
   </div>

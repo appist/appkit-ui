@@ -3,6 +3,7 @@
   import iconClose from "@iconify-icons/heroicons-solid/x";
   import iconMenu from "@iconify-icons/heroicons-solid/menu";
   import Button from "./Button.svelte";
+  import Link from "./Link.svelte";
   import type { NavbarBrand, NavbarAuthLink, NavbarNavLink } from "./types";
 
   export let brand: NavbarBrand = {
@@ -29,25 +30,13 @@
 
     <div class="hidden md:flex md:flex-1 md:items-center md:space-x-6">
       {#each navLinks as { href, name }, _}
-        <a class="nav-link hover:underline" {href}>{name}</a>
+        <a {href}>{name}</a>
       {/each}
     </div>
 
     <div class="hidden md:flex md:items-center md:space-x-6">
-      {#each authLinks as { href, name, bgColor }, _}
-        <a
-          class={clsx({
-            "nav-link hover:underline": bgColor === "",
-            "rounded-sm text-white px-4 py-2": bgColor !== "",
-            "bg-primary-500 hover:bg-primary-600": bgColor === "primary",
-            "bg-secondary-500 hover:bg-secondary-600": bgColor === "secondary",
-            "bg-danger-500 hover:bg-danger-600": bgColor === "danger",
-            "bg-info-500 hover:bg-info-600": bgColor === "info",
-            "bg-success-500 hover:bg-success-600": bgColor === "success",
-            "bg-warning-500 hover:bg-warning-600": bgColor === "warning",
-          })}
-          {href}>{name}</a
-        >
+      {#each authLinks as { href, name, color }, _}
+        <Link {color} {href}>{name}</Link>
       {/each}
     </div>
 
@@ -83,28 +72,21 @@
 
       <div class="my-2">
         {#each navLinks as { href, name }, _}
-          <a class="p-2 block hover:bg-gray-200" {href} on:click={() => (menuOpen = !menuOpen)}
-            >{name}</a
+          <Link
+            class="p-2 my-1 hover:bg-gray-200"
+            block
+            {href}
+            on:click={() => (menuOpen = !menuOpen)}>{name}</Link
           >
         {/each}
 
-        {#each authLinks as { href, name, bgColor }, _}
-          <a
-            class={clsx(
-              {
-                "hover:bg-gray-200": bgColor === "",
-                "rounded-sm text-white text-center mt-2": bgColor !== "",
-                "bg-primary-500 hover:bg-primary-600": bgColor === "primary",
-                "bg-secondary-500 hover:bg-secondary-600": bgColor === "secondary",
-                "bg-danger-500 hover:bg-danger-600": bgColor === "danger",
-                "bg-info-500 hover:bg-info-600": bgColor === "info",
-                "bg-success-500 hover:bg-success-600": bgColor === "success",
-                "bg-warning-500 hover:bg-warning-600": bgColor === "warning",
-              },
-              "p-2 block"
-            )}
+        {#each authLinks as { href, name, color }, _}
+          <Link
+            class={clsx({ "p-2 hover:bg-gray-200": !color }, "my-1")}
+            block
+            {color}
             {href}
-            on:click={() => (menuOpen = !menuOpen)}>{name}</a
+            on:click={() => (menuOpen = !menuOpen)}>{name}</Link
           >
         {/each}
       </div>
