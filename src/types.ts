@@ -1,3 +1,15 @@
+export type IntroImage = {
+  alt: string;
+  src: string;
+};
+
+export type IntroLink = {
+  color: "danger" | "info" | "primary" | "secondary" | "success" | "warning" | "";
+  href: string;
+  name: string;
+  outline: boolean;
+};
+
 export type NavbarBrand = {
   href: string;
   logo: string;
@@ -5,7 +17,7 @@ export type NavbarBrand = {
 };
 
 export type NavbarAuthLink = {
-  bgColor: "danger" | "info" | "primary" | "secondary" | "success" | "warning" | "";
+  color: "danger" | "info" | "primary" | "secondary" | "success" | "warning" | "";
   href: string;
   name: string;
 };
