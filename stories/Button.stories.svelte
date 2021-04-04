@@ -42,20 +42,23 @@
 <Story name="shape">
   <div>
     <Button size="sm" shape="default">Default</Button>
+    <Button size="sm" shape="circle" icon={home}>Circle</Button>
     <Button size="sm" shape="pill">Pill</Button>
-    <Button size="sm" shape="round" icon={home}>Round</Button>
+    <Button size="sm" shape="round">Round</Button>
   </div>
 
   <div class="mt-6">
     <Button size="md" shape="default">Default</Button>
+    <Button size="md" shape="circle" icon={home}>Circle</Button>
     <Button size="md" shape="pill">Pill</Button>
-    <Button size="md" shape="round" icon={home}>Round</Button>
+    <Button size="md" shape="round">Round</Button>
   </div>
 
   <div class="mt-6">
     <Button size="lg" shape="default">Default</Button>
+    <Button size="lg" shape="circle" icon={home}>Circle</Button>
     <Button size="lg" shape="pill">Pill</Button>
-    <Button size="lg" shape="round" icon={home}>Round</Button>
+    <Button size="lg" shape="round">Round</Button>
   </div>
 </Story>
 
@@ -152,9 +155,10 @@
 <Story name="mixed">
   <div>
     <Button color="primary" disabled>Primary</Button>
-    <Button class="align-bottom" color="primary" loading>Primary</Button>
-    <Button size="md" shape="round" icon={home} on:click={() => console.log("keke")}>Round</Button>
-    <Button size="md" shape="round" icon={home} loading>Round</Button>
+    <Button class="align-bottom" color="primary" shape="round" loading>Primary</Button>
+    <Button size="md" shape="circle" icon={home} on:click={() => console.log("test")}>Circle</Button
+    >
+    <Button size="md" shape="circle" icon={home} loading>Circle</Button>
     <Button class="align-bottom" size="md" icon={home} iconPos="leading">Leading Icon</Button>
     <Button class="align-bottom" size="md" icon={home} iconPos="leading" loading
       >Leading Icon</Button
@@ -163,6 +167,6 @@
     <Button class="align-bottom" size="md" icon={home} iconPos="trailing" loading
       >Trailing Icon</Button
     >
-    <Button color="primary" outline>Primary</Button>
+    <Button color="primary" shape="round" outline>Primary</Button>
   </div>
 </Story>

@@ -10,7 +10,7 @@
   export let iconPos: "cover" | "leading" | "trailing" = "cover";
   export let loading: boolean = false;
   export let outline: boolean = false;
-  export let shape: "default" | "pill" | "round" = "default";
+  export let shape: "default" | "circle" | "pill" | "round" = "default";
   export let size: "lg" | "md" | "sm" = "md";
   export let color:
     | "danger"
@@ -38,15 +38,22 @@
       "p-2 text-base": size === "md",
       "p-2.5 text-lg": size === "lg",
 
-      // To support different button shapes.
-      "px-6 rounded-full": shape === "pill",
+      "!px-2.5": size === "sm" && ["circle", "pill"].indexOf(shape) < 0,
+      "!px-3": size === "md" && ["circle", "pill"].indexOf(shape) < 0,
+      "!px-3.5": size === "lg" && ["circle", "pill"].indexOf(shape) < 0,
 
-      "flex items-center justify-center rounded-full align-bottom": shape === "round",
+      // To support different button shapes.
+      "px-6 rounded-full": size === "sm" && shape === "pill",
+      "px-8 rounded-full": size === "md" && shape === "pill",
+      "px-10 rounded-full": size === "lg" && shape === "pill",
+
+      "rounded-sm": shape === "round",
+      "flex items-center justify-center rounded-full align-bottom": shape === "circle",
 
       // Ensure size consistency when the shape is round.
-      "h-8 w-8": size === "sm" && shape === "round",
-      "h-10 w-10": size === "md" && shape === "round",
-      "h-12 w-12": size === "lg" && shape === "round",
+      "h-8 w-8": size === "sm" && shape === "circle",
+      "h-10 w-10": size === "md" && shape === "circle",
+      "h-12 w-12": size === "lg" && shape === "circle",
 
       // Note: PurgeCSS won't work well with dynamic classes. Hence, the repeatitive class switching below.
       "bg-primary-500 hover:bg-primary-600": color === "primary" && !outline,
